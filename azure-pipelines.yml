@@ -16,7 +16,7 @@ stages:
   displayName: Build image
   jobs:
   - job: Build
-    displayName: Build
+    displayName: Build docker
     pool:
       vmImage: ubuntu-latest
     steps:
@@ -25,9 +25,5 @@ stages:
       inputs:
         containerRegistry: 'dockerhub'
         command: 'login'
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'dockerhub'
-        repository: 'python'
-        command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        displayName: Dockerlogin
+    
