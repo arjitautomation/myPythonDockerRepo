@@ -28,10 +28,7 @@ stages:
         command: 'login'
         displayName: Dockerlogin
    
-    - task: Docker@2
+    - task: CmdLine@2
       inputs:
-        containerRegistry: 'docker'
-        repository: 'python'
-        command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        script: 'docker push'
     
