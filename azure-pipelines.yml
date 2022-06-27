@@ -1,4 +1,5 @@
 # Docker
+
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -26,10 +27,11 @@ stages:
         containerRegistry: 'dockerhub'
         command: 'login'
         displayName: Dockerlogin
+   
     - task: Docker@2
       inputs:
-        containerRegistry: 'dockerhub'
-        repository: 'arpitks77/python'
+        containerRegistry: 'docker'
+        repository: 'python'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
     
